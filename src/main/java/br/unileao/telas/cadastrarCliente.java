@@ -1,5 +1,7 @@
 package br.unileao.telas;
 
+import javax.swing.JOptionPane;
+
 
 public class cadastrarCliente extends javax.swing.JFrame {
 
@@ -71,6 +73,11 @@ public class cadastrarCliente extends javax.swing.JFrame {
         getContentPane().add(campo_Senha, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 400, 140, 30));
 
         cadastrar.setText("Cadastrar");
+        cadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cadastrarActionPerformed(evt);
+            }
+        });
         getContentPane().add(cadastrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 490, -1, -1));
 
         fechar.setText("Fechar");
@@ -86,6 +93,10 @@ public class cadastrarCliente extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarActionPerformed
+       JOptionPane.showMessageDialog(null, "Cadastrado com sucesso");
+    }//GEN-LAST:event_cadastrarActionPerformed
 
     /**
      * @param args the command line arguments
