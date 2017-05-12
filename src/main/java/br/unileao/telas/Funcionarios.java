@@ -5,7 +5,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="funcionarios")
-public abstract class Funcionarios extends Pessoa {
+public class Funcionarios extends Pessoa {
     
     private String setor;
     private String funcao;
