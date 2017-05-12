@@ -1,14 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.unileao.telas;
 
-/**
- *
- * @author Lab1
- */
+import javax.swing.JOptionPane;
+
 public class cadastrarFuncionario extends javax.swing.JFrame {
 
     /**
@@ -93,9 +86,19 @@ public class cadastrarFuncionario extends javax.swing.JFrame {
         getContentPane().add(campo_DataDeNascimento, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 260, 90, 30));
 
         cadastrar.setText("Cadastrar");
+        cadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cadastrarActionPerformed(evt);
+            }
+        });
         getContentPane().add(cadastrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 410, -1, 30));
 
         fechar.setText("Fechar");
+        fechar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fecharActionPerformed(evt);
+            }
+        });
         getContentPane().add(fechar, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 410, -1, 30));
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "Manhã", "Tarde", "Noite" }));
@@ -105,8 +108,22 @@ public class cadastrarFuncionario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void campo_DataDeNascimentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campo_DataDeNascimentoActionPerformed
-        // TODO add your handling code here:
+     
     }//GEN-LAST:event_campo_DataDeNascimentoActionPerformed
+
+    private void cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarActionPerformed
+        if (JOptionPane.showConfirmDialog(null, "Tem certeza que quer cadastrar?")== 0){
+            JOptionPane.showMessageDialog(null, "Cadastrado com Sucesso!");
+        }
+        
+    }//GEN-LAST:event_cadastrarActionPerformed
+
+    private void fecharActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fecharActionPerformed
+        if(JOptionPane.showConfirmDialog(null, "Você tem certeza que deseja fechar?")== 0){
+            this.dispose();
+        }
+        
+    }//GEN-LAST:event_fecharActionPerformed
 
     /**
      * @param args the command line arguments

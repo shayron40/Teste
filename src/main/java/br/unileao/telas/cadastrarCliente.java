@@ -95,9 +95,18 @@ public class cadastrarCliente extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarActionPerformed
-       JOptionPane.showMessageDialog(null, "Cadastrado com sucesso");
+       if(JOptionPane.showConfirmDialog(null, "Tem certeza que deseja cadastrar")== 0){
+        JOptionPane.showMessageDialog(null, "Cadastrado Com Sucesso");   
+       }
+        
     }//GEN-LAST:event_cadastrarActionPerformed
 
+    private void fecharActionPerformed(java.awt.ActiveEvent evt) {
+        if(JOptionPane.showConfirmDialog(null, "Tem certeza que deseja fechar?")== 0){
+            this.dispose();
+        }
+        
+    }
     /**
      * @param args the command line arguments
      */
