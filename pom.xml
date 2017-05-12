@@ -33,7 +33,7 @@
 <dependency>
     <groupId>org.hibernate</groupId>
     <artifactId>hibernate-entitymanager</artifactId>
-    <version>5.2.7.Final</version>
+    <version>4.3.1.Final</version>
 </dependency>
 <!-- https://mvnrepository.com/artifact/org.hibernate.javax.persistence/hibernate-jpa-2.0-api -->
 <dependency>
@@ -41,7 +41,16 @@
     <artifactId>hibernate-jpa-2.0-api</artifactId>
     <version>1.0.1.Final</version>
 </dependency>
-
+        <dependency>
+            <groupId>unknown.binary</groupId>
+            <artifactId>derbyclient</artifactId>
+            <version>SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>unknown.binary</groupId>
+            <artifactId>derby</artifactId>
+            <version>SNAPSHOT</version>
+        </dependency>
     </dependencies>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
