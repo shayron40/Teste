@@ -35,6 +35,7 @@ public class cadastrarCliente extends javax.swing.JFrame {
         campo_Endereco = new javax.swing.JTextField();
         estado = new javax.swing.JLabel();
         campo_Estado = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -81,6 +82,11 @@ public class cadastrarCliente extends javax.swing.JFrame {
         getContentPane().add(cadastrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 490, -1, -1));
 
         fechar.setText("Fechar");
+        fechar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fecharActionPerformed(evt);
+            }
+        });
         getContentPane().add(fechar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 490, -1, -1));
 
         endereco.setText("Endereço*");
@@ -90,6 +96,14 @@ public class cadastrarCliente extends javax.swing.JFrame {
         estado.setText("Estado*");
         getContentPane().add(estado, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 180, 50, 30));
         getContentPane().add(campo_Estado, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 180, 130, 30));
+
+        jButton1.setText("Home");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -101,10 +115,18 @@ public class cadastrarCliente extends javax.swing.JFrame {
         
     }//GEN-LAST:event_cadastrarActionPerformed
 
-    private void fecharActionPerformed(java.awt.ActiveEvent evt) {
-        if(JOptionPane.showConfirmDialog(null, "Tem certeza que deseja fechar?")== 0){
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+telaPrincipal telaPrincipal = new telaPrincipal();
+           telaPrincipal.setVisible(true);
+           this.dispose();     // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void fecharActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fecharActionPerformed
+         if(JOptionPane.showConfirmDialog(null, "Tem certeza que deseja fechar?")== 0){
             this.dispose();
-        }
+    }//GEN-LAST:event_fecharActionPerformed
+
+    
         
     }
     /**
@@ -160,6 +182,7 @@ public class cadastrarCliente extends javax.swing.JFrame {
     private javax.swing.JLabel endereco;
     private javax.swing.JLabel estado;
     private javax.swing.JButton fechar;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel senha;
     private javax.swing.JSeparator separador_Cliente;
     private javax.swing.JLabel sexo;
