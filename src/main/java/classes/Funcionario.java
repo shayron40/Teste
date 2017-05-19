@@ -1,21 +1,25 @@
-package br.unileao.telas;
+package classes;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="funcionarios")
-public class Funcionarios extends Pessoa {
+@Table(name="funcionario")
+public class Funcionario extends Pessoa {
     
     private String setor;
     private String funcao;
     private String turno;
 
-    public Funcionarios(String setor, String funcao, String turno, long id, String nome, String email, String estado, String cidade, String endereco, String sexo, String senha, String dataDeNascimento) {
+    public Funcionario(String setor, String funcao, String turno, long id, String nome, String email, String estado, String cidade, String endereco, String sexo, String senha, String dataDeNascimento) {
         super(id, nome, email, estado, cidade, endereco, sexo, senha, dataDeNascimento);
         this.setor = setor;
         this.funcao = funcao;
         this.turno = turno;
+    }
+    
+    public Funcionario(){
+        
     }
     
     
