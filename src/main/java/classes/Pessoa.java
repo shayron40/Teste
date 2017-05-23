@@ -30,8 +30,7 @@ public abstract class Pessoa {
         
     }
     
-    public Pessoa(long id, String nome, String email, String estado, String cidade, String endereco, String sexo, String senha, String dataDeNascimento) {
-        this.id = id;
+    public Pessoa( String nome, String email, String estado, String cidade, String endereco, String sexo, String senha, String dataDeNascimento) {
         this.nome = nome;
         this.email = email;
         this.estado = estado;
