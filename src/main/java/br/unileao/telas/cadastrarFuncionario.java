@@ -37,6 +37,7 @@ public class cadastrarFuncionario extends javax.swing.JFrame {
         cadastrar = new javax.swing.JButton();
         fechar = new javax.swing.JButton();
         jComboBox1 = new javax.swing.JComboBox<>();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAutoRequestFocus(false);
@@ -104,6 +105,14 @@ public class cadastrarFuncionario extends javax.swing.JFrame {
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "Manhã", "Tarde", "Noite" }));
         getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, 90, 30));
 
+        jButton1.setText("Home");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -124,6 +133,12 @@ public class cadastrarFuncionario extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_fecharActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    telaPrincipal telaPrincipal = new telaPrincipal();
+           telaPrincipal.setVisible(true);
+           this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -173,6 +188,7 @@ public class cadastrarFuncionario extends javax.swing.JFrame {
     private javax.swing.JButton fechar;
     private javax.swing.JLabel funcao;
     private javax.swing.JLabel funcionario;
+    private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel nome;
     private javax.swing.JSeparator separador_Funcionario;
