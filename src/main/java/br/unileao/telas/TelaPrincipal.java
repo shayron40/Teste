@@ -42,6 +42,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         getContentPane().add(Text_Painel, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 10, 100, 40));
 
         Home.setText("Home");
+        Home.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                HomeActionPerformed(evt);
+            }
+        });
 
         Cadastrar_Cliente.setText("Cadastro de Clientes");
         Cadastrar_Cliente.addActionListener(new java.awt.event.ActionListener() {
@@ -51,6 +56,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
 
         Cadastrar_Funcionario.setText("Cadastrar Funcionário");
+        Cadastrar_Funcionario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Cadastrar_FuncionarioActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout caixa_De_BotaoLayout = new javax.swing.GroupLayout(caixa_De_Botao);
         caixa_De_Botao.setLayout(caixa_De_BotaoLayout);
@@ -84,8 +94,22 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Cadastrar_ClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cadastrar_ClienteActionPerformed
-        // TODO add your handling code here:
+       cadastrarCliente cadastrarCliente = new cadastrarCliente();
+       cadastrarCliente.setVisible(true);
+       this.dispose();
     }//GEN-LAST:event_Cadastrar_ClienteActionPerformed
+
+    private void HomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HomeActionPerformed
+       TelaPrincipal TelaPrincipal = new TelaPrincipal();
+TelaPrincipal.setVisibe(true);
+this.dispose();
+    }//GEN-LAST:event_HomeActionPerformed
+
+    private void Cadastrar_FuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cadastrar_FuncionarioActionPerformed
+       cadastrarFuncionario cadastrarFuncionario = new cadastrarFuncionario();
+       cadastrarFuncionario.setVisible(true);
+       this.dispose();
+    }//GEN-LAST:event_Cadastrar_FuncionarioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -133,4 +157,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel caixa_De_Botao;
     private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
+
+    void setVisibe(boolean b) {
+        throw new UnsupportedOperationException("Not supported yet."); 
+    }
 }
