@@ -1,7 +1,6 @@
 package DAO;
 
 import classes.Funcionario;
-import java.util.List;
 
 public class FuncionarioDAO extends GenericDAO<Funcionario> {
 

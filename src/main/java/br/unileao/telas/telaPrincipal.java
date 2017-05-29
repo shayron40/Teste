@@ -29,8 +29,9 @@ public class telaPrincipal extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        home = new javax.swing.JButton();
+        cadastrarCliente = new javax.swing.JButton();
+        cadastrarFuncionario = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -39,11 +40,26 @@ public class telaPrincipal extends javax.swing.JFrame {
         jLabel1.setText("Painel");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 30, 100, 40));
 
-        jPanel1.setBackground(new java.awt.Color(102, 102, 255));
+        home.setText("Home");
+        home.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                homeActionPerformed(evt);
+            }
+        });
 
-        jButton1.setText("Home");
+        cadastrarCliente.setText("Cadastro de Cliente");
+        cadastrarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cadastrarClienteActionPerformed(evt);
+            }
+        });
 
-        jButton2.setText("Cadastro");
+        cadastrarFuncionario.setText("Cadastro de Funcionario");
+        cadastrarFuncionario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cadastrarFuncionarioActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -51,18 +67,21 @@ public class telaPrincipal extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(34, 34, 34)
-                .addComponent(jButton1)
-                .addGap(48, 48, 48)
-                .addComponent(jButton2)
-                .addContainerGap(312, Short.MAX_VALUE))
+                .addComponent(home)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
+                .addComponent(cadastrarCliente)
+                .addGap(59, 59, 59)
+                .addComponent(cadastrarFuncionario)
+                .addGap(32, 32, 32))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(home)
+                    .addComponent(cadastrarCliente)
+                    .addComponent(cadastrarFuncionario))
                 .addContainerGap(16, Short.MAX_VALUE))
         );
 
@@ -71,6 +90,24 @@ public class telaPrincipal extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void cadastrarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarClienteActionPerformed
+        cadastrarCliente cadastrarCliente = new cadastrarCliente();
+        cadastrarCliente.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_cadastrarClienteActionPerformed
+
+    private void homeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeActionPerformed
+     telaPrincipal telaPrincipal= new telaPrincipal();
+     telaPrincipal.setVisible(true);
+    this.dispose();
+    }//GEN-LAST:event_homeActionPerformed
+
+    private void cadastrarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarFuncionarioActionPerformed
+        cadastrarFuncionario cadastrarFuncionario= new cadastrarFuncionario();
+        cadastrarFuncionario.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_cadastrarFuncionarioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -109,8 +146,9 @@ public class telaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton cadastrarCliente;
+    private javax.swing.JButton cadastrarFuncionario;
+    private javax.swing.JButton home;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
