@@ -84,6 +84,9 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JTextField" name="campo_Setor">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campo_SetorActionPerformed"/>
+      </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="60" y="180" width="240" height="30"/>
@@ -169,9 +172,6 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JTextField" name="campo_DataDeNascimento">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="      dd/mm/aa"/>
-      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campo_DataDeNascimentoActionPerformed"/>
       </Events>
@@ -207,7 +207,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JComboBox" name="jComboBox1">
+    <Component class="javax.swing.JComboBox" name="caixaDeSelecaoTurno">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="4">

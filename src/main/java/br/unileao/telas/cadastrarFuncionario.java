@@ -1,5 +1,7 @@
 package br.unileao.telas;
 
+import DAO.FuncionarioDAO;
+import classes.Funcionario;
 import javax.swing.JOptionPane;
 
 public class cadastrarFuncionario extends javax.swing.JFrame {
@@ -36,7 +38,7 @@ public class cadastrarFuncionario extends javax.swing.JFrame {
         campo_DataDeNascimento = new javax.swing.JTextField();
         cadastrar = new javax.swing.JButton();
         fechar = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        caixaDeSelecaoTurno = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -56,6 +58,12 @@ public class cadastrarFuncionario extends javax.swing.JFrame {
         setor.setFont(new java.awt.Font("Times New Roman", 1, 11)); // NOI18N
         setor.setText("Setor*");
         getContentPane().add(setor, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, 30));
+
+        campo_Setor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campo_SetorActionPerformed(evt);
+            }
+        });
         getContentPane().add(campo_Setor, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 180, 240, 30));
 
         funcao.setFont(new java.awt.Font("Times New Roman", 1, 11)); // NOI18N
@@ -78,7 +86,6 @@ public class cadastrarFuncionario extends javax.swing.JFrame {
         dataDeNascimento.setText("Data de Nascimento*");
         getContentPane().add(dataDeNascimento, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 250, -1, 50));
 
-        campo_DataDeNascimento.setText("      dd/mm/aa");
         campo_DataDeNascimento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 campo_DataDeNascimentoActionPerformed(evt);
@@ -102,8 +109,8 @@ public class cadastrarFuncionario extends javax.swing.JFrame {
         });
         getContentPane().add(fechar, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 410, -1, 30));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "Manhã", "Tarde", "Noite" }));
-        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, 90, 30));
+        caixaDeSelecaoTurno.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "Manhã", "Tarde", "Noite" }));
+        getContentPane().add(caixaDeSelecaoTurno, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, 90, 30));
 
         jButton1.setText("Home");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -122,6 +129,16 @@ public class cadastrarFuncionario extends javax.swing.JFrame {
 
     private void cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarActionPerformed
         if (JOptionPane.showConfirmDialog(null, "Tem certeza que quer cadastrar?")== 0){
+            Funcionario funcionario = new Funcionario();
+            campo_Nome.getText().toString();
+            campo_Setor.getText().toString();
+            campo_Funcao.getText().toString();
+            caixaDeSelecaoTurno.getSelectedItem().toString();
+            caixaDeCombinacaoDoSexo.getSelectedItem().toString();
+            campo_DataDeNascimento.getText().toString();
+            
+            FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
+            funcionarioDAO.salvar(funcionario);
             JOptionPane.showMessageDialog(null, "Cadastrado com Sucesso!");
         }
         
@@ -135,10 +152,14 @@ public class cadastrarFuncionario extends javax.swing.JFrame {
     }//GEN-LAST:event_fecharActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-    telaPrincipal telaPrincipal = new telaPrincipal();
-           telaPrincipal.setVisible(true);
+    telaPrincipal TelaPrincipal = new telaPrincipal();
+           TelaPrincipal.setVisible(true);
            this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void campo_SetorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campo_SetorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campo_SetorActionPerformed
 
     /**
      * @param args the command line arguments
@@ -180,6 +201,7 @@ public class cadastrarFuncionario extends javax.swing.JFrame {
     private javax.swing.ButtonGroup Grupo_Botoes;
     private javax.swing.JButton cadastrar;
     private javax.swing.JComboBox<String> caixaDeCombinacaoDoSexo;
+    private javax.swing.JComboBox<String> caixaDeSelecaoTurno;
     private javax.swing.JTextField campo_DataDeNascimento;
     private javax.swing.JTextField campo_Funcao;
     private javax.swing.JTextField campo_Nome;
@@ -189,11 +211,14 @@ public class cadastrarFuncionario extends javax.swing.JFrame {
     private javax.swing.JLabel funcao;
     private javax.swing.JLabel funcionario;
     private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel nome;
     private javax.swing.JSeparator separador_Funcionario;
     private javax.swing.JLabel setor;
     private javax.swing.JLabel sexo;
     private javax.swing.JLabel turno;
     // End of variables declaration//GEN-END:variables
+
+    void setVisibe(boolean b) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
