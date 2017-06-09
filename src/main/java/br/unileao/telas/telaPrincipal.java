@@ -32,6 +32,7 @@ public class telaPrincipal extends javax.swing.JFrame {
         home = new javax.swing.JButton();
         cadastrarCliente = new javax.swing.JButton();
         cadastrarFuncionario = new javax.swing.JButton();
+        btlistar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -87,6 +88,14 @@ public class telaPrincipal extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, 530, 50));
 
+        btlistar.setText("Lista Clientes");
+        btlistar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btlistarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btlistar, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 200, -1, -1));
+
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
@@ -108,6 +117,12 @@ public class telaPrincipal extends javax.swing.JFrame {
         cadastrarFuncionario.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_cadastrarFuncionarioActionPerformed
+
+    private void btlistarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btlistarActionPerformed
+        ListarClientes lista = new ListarClientes();
+        lista.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btlistarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -146,6 +161,7 @@ public class telaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btlistar;
     private javax.swing.JButton cadastrarCliente;
     private javax.swing.JButton cadastrarFuncionario;
     private javax.swing.JButton home;
