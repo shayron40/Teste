@@ -15,6 +15,16 @@ public class ClienteDAO extends GenericDAO<Cliente>{
     public ClienteDAO() {
         super(Cliente.class);
     }
+    
+    @Override
+    public boolean salvar(Cliente cliente){
+        if(cliente.getId() == 0){
+            return super.salvar(cliente);
+        }else{
+            return super.editar(cliente);
+        }
+    }
+    
     @Override
     public List<Cliente> listar(){
         sessao = HibernateUtil.getSessionFactory().openSession();
